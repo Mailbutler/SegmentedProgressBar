@@ -18,11 +18,21 @@ struct ProgressSegment {
 
 class SegmentedProgressBar: NSView {
     
-    @IBInspectable var maxValue: CGFloat = CGFloat.greatestFiniteMagnitude
-    @IBInspectable var barHeight: CGFloat = 22.0
-    @IBInspectable var drawLegend: Bool = true
+    @IBInspectable var maxValue: CGFloat = CGFloat.greatestFiniteMagnitude {
+        didSet { needsDisplay = true }
+    }
     
-    var segments: [ProgressSegment]?
+    @IBInspectable var barHeight: CGFloat = 22.0 {
+        didSet { needsDisplay = true }
+    }
+
+    @IBInspectable var drawLegend: Bool = true {
+        didSet { needsDisplay = true }
+    }
+    
+    var segments: [ProgressSegment]? {
+        didSet{ needsDisplay = true }
+    }
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
