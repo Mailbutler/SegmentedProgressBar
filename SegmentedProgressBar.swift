@@ -130,7 +130,7 @@ class SegmentedProgressBar: NSView {
             let legendItemLabelX = legendRect.origin.x + legendRect.size.width + spacing*1.5
 
             let labelFont = NSFont.boldSystemFont(ofSize: 10.0)
-            let labelAttributes = [NSAttributedStringKey.font:labelFont]
+            let labelAttributes = [NSAttributedString.Key.font:labelFont]
             let labelBounds = segmentLabel.boundingRect(with: dirtyRect.size, options: [], attributes: labelAttributes)
 
             let legendItemLabelRect = NSMakeRect(legendItemLabelX, legendRect.origin.y-2.0, labelBounds.size.width, labelBounds.size.height)
@@ -138,7 +138,7 @@ class SegmentedProgressBar: NSView {
 
             // draw value of legend item
             let valueFont = NSFont.systemFont(ofSize: 10.0)
-            let valueAttributes = [NSAttributedStringKey.font:valueFont]
+            let valueAttributes = [NSAttributedString.Key.font:valueFont]
 
             let valueBounds = segmentValue.boundingRect(with: dirtyRect.size, options: [], attributes: valueAttributes)
 
